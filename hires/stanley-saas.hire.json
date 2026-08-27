@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire@1",
+  "name": "Stanley",
+  "character": "stanley",
+  "accent": "blue",
+  "description": "SaaS research. Услуга 6. Q2.",
+  "goal": "Research pack, не стройка продукта пока Q1 не кормит кассу.",
+  "provider": "grok",
+  "capabilities": ["saas-research", "competitors", "positioning"],
+  "isolate": true,
+  "tokenCap": 1000000,
+  "service": 6
+}

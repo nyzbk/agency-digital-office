@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire@1",
+  "name": "Oscar",
+  "character": "oscar",
+  "accent": "green",
+  "description": "Дашборды. Услуга 5.",
+  "goal": "Экран для решения владельца: Free Apps GSC, PORT-10K, касса. Не vanity. Не LIVE реклама ради цифр.",
+  "provider": "codex",
+  "capabilities": ["dashboards", "metrics", "gsc", "adsense-read"],
+  "isolate": true,
+  "tokenCap": 1000000,
+  "service": 5
+}

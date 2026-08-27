@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire-index@1",
+  "floor": "Ultimatum Floor",
+  "hires": [
+    "michael-god.hire.json",
+    "pam-brand.hire.json",
+    "jim-10k-sites.hire.json",
+    "ryan-apps.hire.json",
+    "kelly-ads.hire.json",
+    "oscar-dashboards.hire.json",
+    "stanley-saas.hire.json"
+  ]
+}

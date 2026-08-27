@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire@1",
+  "name": "Ryan",
+  "character": "ryan",
+  "accent": "mint",
+  "description": "Веб-приложения, Free Apps. Услуга 3 + Q1 ADS-OS.",
+  "goal": "1 app = 1 repo = 1 workspace. Три метода AdSense, pub-7636435144500691, Auto ads OFF. deploy → GSC Success → AdSense. LIVE=false. Не собирай 2 app source tree сразу.",
+  "provider": "cursor-agent",
+  "capabilities": ["free-apps", "adsense-ready", "vercel", "isolation"],
+  "isolate": true,
+  "tokenCap": 2000000,
+  "service": 3
+}

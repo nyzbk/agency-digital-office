@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire@1",
+  "name": "Pam",
+  "character": "pam",
+  "accent": "lilac",
+  "description": "Бренд-идентити и дизайн-система. Услуга 1.",
+  "goal": "Шипишь не мудборд, а рабочий Brand Pack: токены, тип, сетка, носители, запреты. Viktor Oddy = метод, не ассеты. Направление выбирает владелец. 2–3 направления, потом polish. WCAG AA.",
+  "provider": "claude",
+  "capabilities": ["brand-identity", "tokens", "html-css", "design-systems"],
+  "isolate": true,
+  "tokenCap": 2000000,
+  "service": 1
+}

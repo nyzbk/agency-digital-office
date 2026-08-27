@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire@1",
+  "name": "Kelly",
+  "character": "kelly",
+  "accent": "coral",
+  "description": "Реклама: продуктовые + AI-influencer. Услуга 4.",
+  "goal": "OnlyFans запрет. Publish = human. Три варианта + один рекомендованный. Факты только из оффера.",
+  "provider": "antigravity",
+  "capabilities": ["ads", "copy", "ai-influencer", "ugc"],
+  "isolate": false,
+  "tokenCap": 1000000,
+  "service": 4
+}

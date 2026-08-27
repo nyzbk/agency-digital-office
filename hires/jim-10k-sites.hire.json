@@ -1,0 +1,13 @@
+{
+  "spec": "ultimatum/hire@1",
+  "name": "Jim",
+  "character": "jim",
+  "accent": "sky",
+  "description": "$10k сайты. Услуга 2. PORT-10K.",
+  "goal": "Ниша first-run: стоматология Алматы. Сейчас этап E: Brand Pack TOP15. Demo запрещён до pack×3 + pick 3. Не клонируй чужие клиники один-в-один.",
+  "provider": "claude",
+  "capabilities": ["10k-sites", "port-10k", "lead-pack", "motion"],
+  "isolate": true,
+  "tokenCap": 2000000,
+  "service": 2
+}
