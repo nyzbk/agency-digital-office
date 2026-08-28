@@ -1,27 +1,28 @@
 # Ultimatum Floor
 
-Единый цифровой штаб агентства Ultimatum.
+Один цифровой штаб агентства Ultimatum.
 
-Один репозиторий. Один Vercel. Один шлюз.
-
+- Репо: https://github.com/nyzbk/agency-digital-office
 - Live: https://ultimatum-floor.vercel.app
-- Repo: https://github.com/nyzbk/agency-digital-office
+- Шлюз: `POST https://ultimatum-floor.vercel.app/v1/chat/completions`
 
-Это не Free App. AdSense не подключать.
+Не Free App. AdSense не подключать. Не второй офис.
 
-## Что внутри
+`digital-product-agent-office` — мёртвый черновик. Штаб только здесь.
 
-- Вход только владельца (`nyzza`)
-- Пол: Michael / Pam / Jim / Ryan / Kelly / Oscar / Stanley
-- Мозг с auto-fallback (OpenRouter → NIM → Groq → HF → Gemini → Mistral → xAI)
-- OpenAI-совместимый шлюз: `POST /v1/chat/completions`
+## Контракт
 
-## Env на Vercel (не в git)
+1. Один GitHub-репозиторий.
+2. Один Vercel-проект (`ultimatum-floor`).
+3. Один OpenAI-совместимый шлюз в этом же проекте.
+4. Вход только владельца: `nyzza`. Нет Google, нет X, нет публичной регистрации.
+5. Ключи бесплатные, на сервере. Ротация не делается, пока ими не начнут пользоваться чужие.
+6. OmniRoute / FCC — обязательный контур, не «по желанию».
 
-`OPENROUTER_API_KEY` `NVIDIA_NIM_API_KEY` `GROQ_API_KEY` `HUGGINGFACE_API_KEY` `GEMINI_API_KEY` `MISTRAL_API_KEY` `XAI_API_KEY` `GATEWAY_TOKEN`
+## Что делает шлюз
 
-Ключи также можно вставить во вкладке Ключи после входа.
+1. `OMNI_GATEWAY_URL` — свой OmniRoute (Docker из `deploy/omniroute`).
+2. Free/FCC цепочка: OpenRouter → NIM → Groq → HF → Cerebras → Gemini → DeepSeek → Together → SiliconFlow → Mistral → SambaNova → Pollinations → xAI.
+3. Circuit breaker 90с на 429/5xx, sticky last-ok 10 мин.
 
-## Не второй офис
-
-`digital-product-agent-office` — черновик другого контура. Штаб агентства = этот репо.
+Полный демон OmniRoute — процесс. Он не живёт как Vercel Function. Поэтому Docker из этого же репо, а офис бьёт в него первым хопом. Пока VPS не прописан, офис уже отвечает через `/v1` на Vercel.

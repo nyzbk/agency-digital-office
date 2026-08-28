@@ -1,5 +1,5 @@
 {
-  "name": "ultimatum-floor",
+  "name": "agency-digital-office",
   "private": true,
-  "type": "module"
+  "description": "Ultimatum Floor — one HQ, one Vercel, one gateway"
 }
