@@ -1,5 +1,9 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/v1/chat/completions", "destination": "/api/v1/chat/completions" },
+    { "source": "/v1/models", "destination": "/api/v1/models" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

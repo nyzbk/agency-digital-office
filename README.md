@@ -1,22 +1,27 @@
 # Ultimatum Floor
 
-Command surface for Ultimatum agency digital employees.
+Единый цифровой штаб агентства Ultimatum.
 
-- **Layer A (workers):** official [Munder Difflin](https://github.com/chaitanyagiri/munder-difflin) on the owner machine. Electron + node-pty + your existing CLI subscriptions.
-- **Layer B (this repo):** roster, Eisenhower board, hive protocol, hire JSON, static floor UI.
-- **Not a Free App.** Do not attach AdSense. Do not treat Vercel as a PTY host.
+Один репозиторий. Один Vercel. Один шлюз.
 
-## Local workers
+- Live: https://ultimatum-floor.vercel.app
+- Repo: https://github.com/nyzbk/agency-digital-office
 
-```bash
-git clone https://github.com/chaitanyagiri/munder-difflin.git
-cd munder-difflin
-npm install
-npm run dev
-```
+Это не Free App. AdSense не подключать.
 
-Import JSON from `/hires` via Add Agent → Import hire.
+## Что внутри
 
-## Live surface
+- Вход только владельца (`nyzza`)
+- Пол: Michael / Pam / Jim / Ryan / Kelly / Oscar / Stanley
+- Мозг с auto-fallback (OpenRouter → NIM → Groq → HF → Gemini → Mistral → xAI)
+- OpenAI-совместимый шлюз: `POST /v1/chat/completions`
 
-https://agency-digital-office.vercel.app
+## Env на Vercel (не в git)
+
+`OPENROUTER_API_KEY` `NVIDIA_NIM_API_KEY` `GROQ_API_KEY` `HUGGINGFACE_API_KEY` `GEMINI_API_KEY` `MISTRAL_API_KEY` `XAI_API_KEY` `GATEWAY_TOKEN`
+
+Ключи также можно вставить во вкладке Ключи после входа.
+
+## Не второй офис
+
+`digital-product-agent-office` — черновик другого контура. Штаб агентства = этот репо.
