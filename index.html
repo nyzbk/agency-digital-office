@@ -3,45 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ultimatum Floor — Agency Digital Office</title>
-  <meta name="description" content="Командный центр цифровых сотрудников. Workers в Munder Difflin локально." />
+  <title>Ultimatum Floor — штаб</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root{--bg:#1a1714;--panel:#2a241e;--panel2:#342c24;--ink:#f3ead9;--muted:#b7a892;--line:#4a3f33;--gold:#d4a017;--mint:#2ee6a6;--warn:#e8a54b;--stop:#d4533a;--idle:#8a7d6b}
-    *{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:IBM Plex Sans,Segoe UI,system-ui,sans-serif}
-    body{display:grid;grid-template-rows:48px 1fr 56px}
-    header{display:flex;align-items:center;gap:16px;padding:0 14px;background:#221c17;border-bottom:1px solid var(--line)}
-    header .brand{font-weight:700}header .brand span{color:var(--gold)}header .tag{color:var(--muted);font-size:12px}header .live{margin-left:auto;font-size:12px;color:var(--mint)}
-    main{display:grid;grid-template-columns:1.15fr .85fr;min-height:0}
-    .floor{position:relative;margin:10px;background:repeating-linear-gradient(0deg,#2b251f 0 24px,#2e2822 24px 48px);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-    .room{position:absolute;border:1px solid #5a4c3c;background:rgba(40,34,28,.72);border-radius:6px;padding:6px}
-    .room h3{margin:0 0 6px;font-size:11px;color:var(--gold);text-transform:uppercase}
-    .agent{display:inline-flex;flex-direction:column;align-items:center;width:64px;margin:4px;cursor:pointer}
-    .agent .av{width:28px;height:28px;border-radius:4px;display:grid;place-items:center;font-size:11px;font-weight:700;color:#1a1714;border:2px solid #111}
-    .agent .nm{font-size:10px;margin-top:3px}.agent .st{font-size:9px;color:var(--muted)}
-    .agent.working .st{color:var(--mint)}.agent.idle .st{color:var(--idle)}.agent.gate .st{color:var(--warn)}
-    aside{display:flex;flex-direction:column;min-height:0;border-left:1px solid var(--line);background:var(--panel)}
-    .tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-    .tabs button{background:transparent;color:var(--muted);border:0;border-right:1px solid var(--line);padding:8px 10px;font-size:11px;cursor:pointer}
-    .tabs button.on{color:var(--ink);background:var(--panel2)}
-    .pane{flex:1;overflow:auto;padding:12px;font-size:13px;line-height:1.45}.pane h2{margin:0 0 8px;font-size:15px}
-    .pane pre,.log{background:#16130f;border:1px solid var(--line);padding:10px;border-radius:6px;font-family:IBM Plex Mono,ui-monospace,monospace;font-size:11px;white-space:pre-wrap}
-    .card{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:10px;margin:8px 0}.card b{color:var(--gold)}
-    .row{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}
-    .gate{border-left:3px solid var(--warn)}.ok{border-left:3px solid var(--mint)}.bad{border-left:3px solid var(--stop)}
-    footer{display:flex;align-items:center;gap:10px;padding:0 12px;background:#221c17;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}footer a{color:var(--gold)}
-    textarea{width:100%;background:#16130f;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px;font:inherit}
-    button.act{background:var(--gold);color:#1a1714;border:0;padding:8px 12px;border-radius:4px;font-weight:700;cursor:pointer}
-    .warnbox{background:#3a2a16;border:1px solid var(--warn);padding:8px 10px;border-radius:6px;font-size:12px}
+    :root { --bg:#16130f; --raised:#211c17; --surface:#2a241e; --ink:#f3ead9; --muted:#b7a892; --line:#4a3f33; --gold:#d4a017; --mint:#2ee6a6; --warn:#e8a54b; --stop:#d4533a; }
+    * { box-sizing: border-box; }
+    html, body { margin:0; min-height:100%; background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans",system-ui,sans-serif; }
+    a { color:var(--gold); } button,input,textarea { font:inherit; } .hide { display:none !important; }
+    header.app { display:flex; align-items:center; gap:14px; padding:0 16px; height:56px; border-bottom:1px solid var(--line); background:#1b1713; }
+    .brand { font-family:Fraunces,Georgia,serif; font-size:22px; } .brand span { color:var(--gold); }
+    .nav { display:flex; gap:4px; flex-wrap:wrap; }
+    .nav button { background:transparent; color:var(--muted); border:0; padding:8px 10px; border-radius:6px; cursor:pointer; font-size:13px; }
+    .nav button.on { color:var(--ink); background:var(--surface); }
+    .spacer { flex:1; } .who { font-size:12px; color:var(--muted); }
+    .ghost { background:transparent; color:var(--muted); border:1px solid var(--line); border-radius:6px; padding:6px 10px; cursor:pointer; }
+    main { max-width:1180px; margin:0 auto; padding:24px 16px 64px; }
+    h1 { font-family:Fraunces,Georgia,serif; font-weight:500; font-size:40px; margin:0 0 8px; }
+    h2 { font-family:Fraunces,Georgia,serif; font-weight:500; margin:0 0 12px; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px; cursor:pointer; min-height:148px; }
+    .card:hover { border-color:var(--gold); }
+    .dot { width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:6px; }
+    .meta { font-size:12px; color:var(--muted); margin-top:8px; }
+    .login { max-width:420px; margin:12vh auto 0; }
+    .box { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; }
+    label { display:block; font-size:13px; margin:12px 0 6px; }
+    input, textarea { width:100%; background:var(--raised); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+    .act { width:100%; margin-top:16px; background:var(--gold); color:#16130f; border:0; border-radius:8px; padding:12px; font-weight:600; cursor:pointer; }
+    .act.inline { width:auto; margin:0; }
+    .err { color:var(--stop); font-size:13px; margin-top:10px; }
+    .ok { color:var(--mint); }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th,td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--muted); font-weight:500; }
+    .chat { display:grid; grid-template-columns:220px 1fr; gap:16px; min-height:62vh; }
+    .roster button { display:block; width:100%; text-align:left; background:var(--surface); border:1px solid var(--line); color:var(--ink); border-radius:8px; padding:8px 10px; margin-bottom:6px; cursor:pointer; }
+    .roster button.on { border-color:var(--gold); }
+    .thread { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:12px; background:var(--raised); min-height:62vh; }
+    .msgs { flex:1; overflow:auto; padding:14px; display:flex; flex-direction:column; gap:10px; }
+    .bubble { max-width:80%; padding:10px 12px; border-radius:10px; font-size:14px; line-height:1.45; white-space:pre-wrap; }
+    .me { align-self:flex-end; background:#3a3228; }
+    .bot { align-self:flex-start; background:var(--surface); border:1px solid var(--line); }
+    .composer { display:flex; gap:8px; padding:10px; border-top:1px solid var(--line); }
+    .composer textarea { min-height:52px; }
+    pre.code { background:#120f0c; border:1px solid var(--line); padding:12px; border-radius:8px; overflow:auto; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; }
+    .pill { display:inline-block; font-size:11px; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); }
+    .warn { background:#3a2a16; border:1px solid var(--warn); padding:10px 12px; border-radius:8px; font-size:13px; }
+    footer.bar { position:fixed; left:0; right:0; bottom:0; height:36px; display:flex; align-items:center; gap:12px; padding:0 16px; background:#1b1713; border-top:1px solid var(--line); font-size:12px; color:var(--muted); }
+    @media (max-width:800px) { .chat { grid-template-columns:1fr; } h1 { font-size:30px; } }
   </style>
 </head>
 <body>
-<header><div class="brand">ULTIMATUM <span>FLOOR</span></div><div class="tag">Agency Digital Office · hive · GOD = owner clone</div><div class="live" id="clock">STANDING BY</div></header>
-<main><section class="floor" id="floor"></section>
-<aside><nav class="tabs" id="tabs">
-<button class="on" data-tab="god">GOD</button><button data-tab="roster">Roster</button><button data-tab="tasks">Tasks</button><button data-tab="hive">Hive</button><button data-tab="gates">Gates</button><button data-tab="install">Install</button>
-</nav><div class="pane" id="pane"></div></aside></main>
-<footer><span>Слой A: Munder Difflin локально. Слой B: этот сайт на Vercel.</span>
-<a href="https://github.com/chaitanyagiri/munder-difflin">upstream</a>
-<a href="https://github.com/nyzbk/agency-digital-office">repo</a></footer>
-<script src="floor.js"></script>
-</body></html>
+  <div id="gate" class="login">
+    <p class="muted" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Ultimatum Floor · только владелец</p>
+    <h1>Вход в штаб</h1>
+    <p class="muted">Ключи и каталог шлюза не светятся гостю. Сессия — httpOnly cookie на этом браузере.</p>
+    <form id="login" class="box" method="post" action="/api/login">
+      <label for="user">Логин</label>
+      <input id="user" name="username" autocomplete="username" />
+      <label for="pass">Пароль</label>
+      <input id="pass" name="password" type="password" autocomplete="current-password" />
+      <button class="act" type="submit">Войти</button>
+      <p class="err hide" id="login-err"></p>
+    </form>
+  </div>
+  <div id="hq" class="hide">
+    <header class="app">
+      <div class="brand">ULTIMATUM <span>FLOOR</span></div>
+      <nav class="nav" id="nav">
+        <button data-view="floor" class="on">Пол</button>
+        <button data-view="agents">Агенты</button>
+        <button data-view="chat">Чат</button>
+        <button data-view="providers">Провайдеры</button>
+        <button data-view="omni">Шлюз</button>
+        <button data-view="keys">Ключи</button>
+      </nav>
+      <div class="spacer"></div>
+      <span class="who">nyzza</span>
+      <button class="ghost" id="out" type="button">Выйти</button>
+    </header>
+    <main id="view"></main>
+    <footer class="bar">
+      <span id="clock">—</span>
+      <span>один репо · один Vercel · один шлюз</span>
+      <a href="https://github.com/nyzbk/agency-digital-office">repo</a>
+      <a href="/api/health">health</a>
+    </footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
